@@ -1,13 +1,17 @@
 {
   "expo": {
     "name": "move.it",
-    "slug": "move.it",
+    "slug": "moveit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/png/icon.png",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -18,7 +22,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.nayaracorrea.moveit",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/png/adaptive-icon.png"
