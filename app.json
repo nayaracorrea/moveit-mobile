@@ -1,15 +1,10 @@
 {
   "expo": {
-    "name": "moveit-mobile",
-    "slug": "moveit-mobile",
+    "name": "move.it",
+    "slug": "move.it",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+    "icon": "./assets/png/icon.png",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -26,7 +21,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/png/adaptive-icon.png"
     }
   }
 }
