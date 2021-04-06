@@ -20,7 +20,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/png/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.nayaracorrea.moveit",

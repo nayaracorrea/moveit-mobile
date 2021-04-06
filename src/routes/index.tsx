@@ -26,8 +26,6 @@ const Routes: React.FC = () => {
         <AuthRoutes />
       )}
     </>
-    
-    
   )
 }
 

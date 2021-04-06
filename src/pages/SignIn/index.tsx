@@ -27,7 +27,7 @@ import {
 import { AuthContext } from '../../contexts/auth'
 
 export default function SignIn ({ navigation }) {
-  const {spinner, notification, user, alert, signIn, hideAlert } = useContext(AuthContext)
+  const {spinner, notification, alert, signIn, checkSignIn, hideAlert } = useContext(AuthContext)
 
   return (
     <Container>
@@ -35,7 +35,7 @@ export default function SignIn ({ navigation }) {
       <Body>
         <Formik
           initialValues={initialFields}
-          // validationSchema={Schema}
+          validationSchema={Schema}
           onSubmit={(values) => signIn(values)}
         >
           {({ handleChange, handleBlur, handleSubmit, errors, touched, values }) => (
@@ -60,7 +60,7 @@ export default function SignIn ({ navigation }) {
                 onChangeText={handleChange('password')}
               />
               <Error>{touched.password && errors.password}</Error>
-              <Button onPress={handleSubmit}>
+              <Button onPress={() => {handleSubmit()}}>
                 <Login>Login</Login>
               </Button>
               <OptionText>Ou</OptionText>
