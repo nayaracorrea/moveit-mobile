@@ -24,20 +24,25 @@ interface CountdownProps {
 }
 
 export default function Challenges() {
-
+  const { completeChallenge, activeChallenge } = useContext(CountdownContext)
 
   return (
     <>
       <Header>
-        <XP>Ganhe 200 xp</XP>
+        <XP>Ganhe {activeChallenge.amount} xp</XP>
         <LineContainer>
           <Line />
         </LineContainer>
       </Header>
       <Body>
-        <Eye width={100} height={100} />
+        {activeChallenge.type === 'body' ? (
+          <BodyImage width={100} height={100} />
+        ) : (
+          <Eye width={100} height={100} />
+        )}
+        
         <Title>Exercite-se</Title>
-        <DescriptionChallenge>Caminhe por 3 minutos e estique suas pernas pra você ficar saudável.</DescriptionChallenge>
+        <DescriptionChallenge>{activeChallenge.description}</DescriptionChallenge>
       </Body>
       <Footer>
         <ContainerButtonLeft>
@@ -46,7 +51,7 @@ export default function Challenges() {
           </Button>
         </ContainerButtonLeft>
         <ContainerButtonRight>
-          <Button color='#4CD62B'>
+          <Button color='#4CD62B' onPress={completeChallenge}>
             <TitleButton>Completei</TitleButton>
           </Button>
         </ContainerButtonRight>

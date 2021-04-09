@@ -1,22 +1,50 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, ReactNode, useEffect, useState } from 'react'
+import challenges from '../../challenges.json'
+
+interface Challenge {
+  type: 'body' | 'eye';
+  description: string;
+  amount: number;
+}
 
 interface CountdownContextData {
   minutes: number;
   seconds: number;
   isActive: boolean;
   challenge: boolean;
+  activeChallenge: Challenge;
+  level: number;
+  currentExperience: number;
+  experienceToNextLevel: number;
+  challengesCompleted: number;
   startCountdown(): void;
   resetCountdown(): void;
+  completeChallenge(): void;
+}
+
+interface ChallengesProviderProps {
+  children?: ReactNode;
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
 }
 
 export const CountdownContext = createContext({} as CountdownContextData)
 
 let countdownTimeout: NodeJS.Timeout;
 
-export const CountdownProvider: React.FC = ({ children }) => {
+const CountdownProvider = ({ children, ...rest  }: ChallengesProviderProps) => {
   const [isActive, setIsActive] = useState(false)
   const [time, setTime] = useState(0.1 * 60)
   const [challenge, setChallenge] = useState(false)
+
+  const [activeChallenge, setActiveChallenge] = useState<any>(null);
+
+  const [level, setLevel] = useState(rest.level ?? 1);
+  const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
+  const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
+
+  const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
 
   const minutes = Math.floor(time / 60)
   const seconds = time % 60
@@ -32,18 +60,70 @@ export const CountdownProvider: React.FC = ({ children }) => {
   }
 
   useEffect(() => {
-    if (isActive && time > 0) {
+    if (isActive === true && time > 0) {
       countdownTimeout = setTimeout(() => {
         setTime(time - 1)
       }, 1000)
-    } else if (isActive && time === 0) {
+    } else if (isActive === true && time === 0) {
       setChallenge(true)
+      startNewChallenge()
     }
   }, [isActive, time])
 
+  //Challenges
+
+  function startNewChallenge() {
+    const randomChallengeIndex = Math.floor(Math.random() * challenges.length)
+    const challenge = challenges[randomChallengeIndex]
+
+    setActiveChallenge(challenge)
+  }
+
+  function levelUp() {
+    setLevel(level + 1)
+  }
+
+
+
+  function completeChallenge() {
+    if (!isActive) {
+      return;
+    }
+
+    const { amount } = activeChallenge
+
+    let finalExperience = currentExperience + amount
+
+    if (finalExperience >= experienceToNextLevel) {
+      finalExperience = finalExperience - experienceToNextLevel
+      levelUp()
+    }
+
+    setChallenge(false)
+    setActiveChallenge(null)
+    setCurrentExperience(finalExperience)
+    setChallengesCompleted(challengesCompleted + 1)
+    resetCountdown()
+  }
+
   return (
-    <CountdownContext.Provider value={{ minutes, seconds, isActive, challenge, startCountdown, resetCountdown }}>
+    <CountdownContext.Provider 
+      value={{ 
+        minutes, 
+        seconds, 
+        isActive, 
+        challenge, 
+        activeChallenge, 
+        level, 
+        currentExperience, 
+        experienceToNextLevel, 
+        challengesCompleted,
+        startCountdown, 
+        resetCountdown, 
+        completeChallenge }}>
       {children}
     </CountdownContext.Provider>
   )
 }
+
+export default CountdownProvider

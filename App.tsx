@@ -6,14 +6,24 @@ import { RegisterProvider } from './src/contexts/register'
 
 import Routes from './src/routes/index'
 import { AuthProvider } from './src/contexts/auth';
-import { CountdownProvider } from './src/contexts/countdown';
+import CountdownProvider from './src/contexts/countdown';
 
-export default function App() {
+interface HomeProps {
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
+}
+
+export default function App(props: HomeProps) {
   return (
     <NavigationContainer>
       <RegisterProvider>
         <AuthProvider>
-          <CountdownProvider>
+          <CountdownProvider
+            level={props.level}
+            currentExperience={props.currentExperience}
+            challengesCompleted={props.challengesCompleted}
+          >
             <Routes />
           </CountdownProvider>
         </AuthProvider>

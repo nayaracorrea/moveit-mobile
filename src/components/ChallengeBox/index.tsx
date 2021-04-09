@@ -35,7 +35,7 @@ export default function ChallengeBox () {
         <Challenge />
       ) : (
         <>
-          {!isActive ? (
+          {isActive === false ? (
             <InitialBox click={startCountdown} />
           ) : (
             <Countdown click={resetCountdown} />
