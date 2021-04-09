@@ -1,38 +1,50 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
-// import LevelUp from '../../assets/svg/level_up'
+import Countdown from './Countdown'
+import InitialBox from './InitialBox'
+import Challenge from './Challenges'
+
+import LevelUp from '../../../assets/svg/level_up'
+import { CountdownContext } from '../../contexts/countdown'
 
 import {
   Container,
-  Header,
-  HeaderText,
-  Body,
-  Button,
-  ButtonText,
-  Footer,
-  FooterText
 } from './styles'
+
+const styles = StyleSheet.create({
+  shadow: {
+    shadowColor: "#000",
+      shadowOffset: {
+    	width: 0,
+    	height: 4,
+    },
+    shadowOpacity: 0.30,
+    shadowRadius: 4.65,
+   elevation: 8,
+  }
+})
 
 
 export default function ChallengeBox () {
+  const { isActive, challenge, startCountdown, resetCountdown } = useContext(CountdownContext)
+
   return (
-    <Container>
-      <Header>
-        <HeaderText>
-          Inicie um ciclo para receber desafios a serem completados
-        </HeaderText>
-      </Header>
-      <Body>
-        <Button>
-          <ButtonText>Iniciar ciclo</ButtonText>
-        </Button>
-      </Body>
-      <Footer>
-        {/* <LevelUp width={85} height={85} /> */}
-        <FooterText>
-          Complete-os e ganhe experiência para avançar de level
-        </FooterText>
-      </Footer>
+    <Container style={styles.shadow}>
+      {challenge ? (
+        <Challenge />
+      ) : (
+        <>
+          {!isActive ? (
+            <InitialBox click={startCountdown} />
+          ) : (
+            <Countdown click={resetCountdown} />
+          )}
+        </>
+      )}
+
+
+
     </Container>
   )
 }

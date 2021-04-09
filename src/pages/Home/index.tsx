@@ -1,16 +1,43 @@
-import React, { useContext } from 'react'
-import { View, Text, Button } from 'react-native'
+import React, { useContext, useLayoutEffect } from 'react'
+import { View, Text, Button, TouchableOpacity } from 'react-native'
 import { AuthContext } from '../../contexts/auth'
+import { MaterialIcons as Icon } from '@expo/vector-icons'
 
+import InfoUserHome from '../../components/InfoUserHome/index'
+import ChallengeBox from '../../components/ChallengeBox/index'
 
-export default function Home () {
-  const { signOut } = useContext(AuthContext)
+import {
+  Container,
+  InfoUserContainer,
+  ChallengeBoxContainer
+} from './styles'
+
+export default function Home ({ navigation }) {
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity
+        style={{ alignItems: 'center', justifyContent: 'center', height: '100%', width: 50 }}
+        onPress={() => navigation.navigate('Profile')}
+      >
+        <Icon name='settings' size={30} color="#fff" />
+      </TouchableOpacity>
+      )
+    })
+  })
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home</Text>
-      <Button title='SignOut' onPress={signOut}></Button>
-    </View>
+    <Container>
+    <InfoUserContainer>
+      <InfoUserHome />
+    </InfoUserContainer>
+    
+    
+    <ChallengeBoxContainer>
+      <ChallengeBox />
+    </ChallengeBoxContainer>
+  </Container>
 
   )
 }

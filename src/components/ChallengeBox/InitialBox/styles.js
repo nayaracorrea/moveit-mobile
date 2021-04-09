@@ -1,15 +1,5 @@
 import styled from 'styled-components/native'
 
-export const Container = styled.View`
-  width: 85%; 
-  height: 90%;
-  background-color: #fff;
-  border-radius: 15px; 
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-`
-
 export const Header = styled.View`
   width: 100%;
   height: 33.33%; 
@@ -21,6 +11,9 @@ export const Header = styled.View`
 export const HeaderText = styled.Text`
   font-size: 26px;
   text-align: center;
+  font-weight: bold;
+
+  color: #666;
 `
 
 export const Body = styled.View`
@@ -38,6 +31,7 @@ export const Button = styled.TouchableOpacity`
   border-radius: 15px;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 `
 
 export const ButtonText = styled.Text`
@@ -71,5 +65,6 @@ export const FooterContainerText = styled.View`
 
 export const FooterText = styled.Text`
   font-size: 18px; 
-  text-align: center; 
+  text-align: center;
+  color: #666;
 `

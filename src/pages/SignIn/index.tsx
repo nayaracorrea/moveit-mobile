@@ -27,7 +27,7 @@ import {
 import { AuthContext } from '../../contexts/auth'
 
 export default function SignIn ({ navigation }) {
-  const {spinner, notification, alert, signIn, checkSignIn, hideAlert } = useContext(AuthContext)
+  const {spinner, notification, alert, signIn, hideAlert } = useContext(AuthContext)
 
   return (
     <Container>

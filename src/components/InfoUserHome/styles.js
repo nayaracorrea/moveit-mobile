@@ -12,8 +12,8 @@ export const SubContainer = styled.View`
 `
 
 export const AvatarContainer = styled.View`
-  height: 10%;
-  width: 20%;
+  height: 60px;
+  width: 60px;
   background-color: #f4f4f4;
   border-radius: 60px;
   margin-left: 6%;
@@ -27,6 +27,7 @@ export const Avatar = styled.Image`
 
 export const NameContainer = styled.View`
   margin-left: 15px;
+  margin-bottom: 10px;
 `
 
 export const Name = styled.Text`
@@ -36,11 +37,11 @@ export const Name = styled.Text`
 
 export const LevelContainer = styled.View`
   flex-direction: row;
-  margin-top: 4px; 
+  top: 7px; 
 `
 
 export const Level = styled.Text`
   font-size: 14px; 
   margin-left: 2%;
-  top: 4%;
+  top: -1px;
 `

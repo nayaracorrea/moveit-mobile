@@ -8,11 +8,12 @@ import {
   LoaderContainer
 } from './styles'
 
-export default function SplashScreen() {
+export default function Splash() {
 
   return (
     <Container>
       <StatusBar translucent={true} style='light' />
+
       <Logo source={require('../../../assets/png/logo.png')} />
       {/* <LoaderContainer>
         <LottieView 

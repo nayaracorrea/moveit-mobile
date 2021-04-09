@@ -6,13 +6,16 @@ import { RegisterProvider } from './src/contexts/register'
 
 import Routes from './src/routes/index'
 import { AuthProvider } from './src/contexts/auth';
+import { CountdownProvider } from './src/contexts/countdown';
 
 export default function App() {
   return (
     <NavigationContainer>
       <RegisterProvider>
         <AuthProvider>
-          <Routes />
+          <CountdownProvider>
+            <Routes />
+          </CountdownProvider>
         </AuthProvider>
       </RegisterProvider>
     </NavigationContainer>

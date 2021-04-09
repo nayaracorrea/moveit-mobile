@@ -1,5 +1,6 @@
 import React from 'react'
 import Home from '../pages/Home'
+import Profile from '../pages/Profile'
 
 import { createStackNavigator } from '@react-navigation/stack'
 
@@ -21,6 +22,22 @@ const AppRoutes: React.FC = () => (
         },
         headerTitleAlign: 'center'
       }} />
+    <AppStack.Screen 
+      name="Profile"
+      component={Profile}
+      options={{
+        headerTransparent: false,
+        headerTitle: 'Perfil',
+        headerTitleStyle: {
+          color: '#fff',
+        },
+        headerStyle: {
+          backgroundColor: '#5965E0'
+        },
+        headerTitleAlign: 'center',
+        headerTintColor: '#fff'
+      }}
+    />
   </AppStack.Navigator>
 )
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-// import LevelIcon from '../../assets/svg/level'
+import LevelIcon from '../../../assets/svg/level'
 
 import {
   Container,
@@ -20,12 +20,12 @@ export default function InfoUserHome () {
       <Container>
         <SubContainer>
           <AvatarContainer>
-            <Avatar source={require('../../assets/jpg/woman.jpg')} />
+            <Avatar source={require('../../../assets/jpg/woman.jpg')} />
           </AvatarContainer>
           <NameContainer>
             <Name>Nayara Corrêa</Name>
             <LevelContainer>
-              {/* <LevelIcon width={15} height={15} /> */}
+              <LevelIcon width={15} height={15} />
               <Level>Level 1</Level>
             </LevelContainer>
           </NameContainer>
