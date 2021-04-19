@@ -11,7 +11,7 @@ import {
 
 
 export default ({
-  icon, placeholder, color, password = false, ...rest
+  icon, placeholder, color, click, colorIconArea, ...rest
 }) => (
   <Form>
       <InputArea>
@@ -20,7 +20,7 @@ export default ({
           {...rest}
         />
       </InputArea>
-      <IconArea>
+      <IconArea color={colorIconArea} onPress={click}>
         <Icon name={icon} size={20} color={color} />
       </IconArea>
     

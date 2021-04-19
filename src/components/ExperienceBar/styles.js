@@ -7,6 +7,10 @@ export const Container = styled.View`
  justify-content: center;
  padding-left: 15px;
  padding-right: 15px;
+
+ width: 90%;
+ height: 85%;
+ /* background-color: #fff; */
 `
 
 export const InitialValueExpBar = styled.Text`

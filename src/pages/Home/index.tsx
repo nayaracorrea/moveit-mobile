@@ -30,7 +30,7 @@ export default function Home ({ navigation }) {
   return (
     <Container>
     <InfoUserContainer>
-      <InfoUserHome />
+      <InfoUserHome color='#000' />
     </InfoUserContainer>
     
     

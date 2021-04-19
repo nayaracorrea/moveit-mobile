@@ -11,6 +11,7 @@ import { CountdownContext } from '../../contexts/countdown'
 import {
   Container,
 } from './styles'
+import { ChallengeContext } from '../../contexts/challenges'
 
 const styles = StyleSheet.create({
   shadow: {
@@ -27,11 +28,12 @@ const styles = StyleSheet.create({
 
 
 export default function ChallengeBox () {
-  const { isActive, challenge, startCountdown, resetCountdown } = useContext(CountdownContext)
+  const { isActive, startCountdown, resetCountdown } = useContext(CountdownContext)
+  const { activeChallenge } = useContext(ChallengeContext)
 
   return (
     <Container style={styles.shadow}>
-      {challenge ? (
+      {activeChallenge ? (
         <Challenge />
       ) : (
         <>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { TouchableOpacity, View, Text } from 'react-native'
-import { CountdownContext } from '../../contexts/countdown'
+import { ChallengeContext } from '../../contexts/challenges'
 
 import {
   Container,
@@ -15,10 +15,10 @@ import {
 
 
 export const ChallengesCompleted = () => {
-  const { currentExperience, challengesCompleted } = useContext(CountdownContext)
+  const { currentExperience, challengesCompleted } = useContext(ChallengeContext)
 
   return (
-    <Container>
+    <>
       <Body>
         <BoxLeft>
           <Title>Desafios Completos</Title>
@@ -32,6 +32,6 @@ export const ChallengesCompleted = () => {
           <SubTitle>{currentExperience}</SubTitle>
         </BoxRight>
       </Body>
-    </Container>
+    </>
   )
 }

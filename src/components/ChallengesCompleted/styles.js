@@ -9,8 +9,8 @@ export const Container = styled.View`
 `
 
 export const Body = styled.View`
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 85%;
   background-color: #fff;
   flex-direction: row;
   border-radius: 20px;
@@ -27,7 +27,7 @@ export const BoxLeft = styled.View`
 `
 
 export const Title = styled.Text`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   color: #666;
 `

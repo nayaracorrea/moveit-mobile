@@ -82,6 +82,7 @@ export default function Register({navigation}) {
                   value={values.password}
                   onBlur={handleBlur('password')}
                   onChangeText={handleChange('password')}
+                  password
                 />
                 <Error>{touched.password && errors.password}</Error>
                 <Input 

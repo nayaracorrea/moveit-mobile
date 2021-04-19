@@ -7,6 +7,7 @@ import { RegisterProvider } from './src/contexts/register'
 import Routes from './src/routes/index'
 import { AuthProvider } from './src/contexts/auth';
 import CountdownProvider from './src/contexts/countdown';
+import ChallengeProvider from './src/contexts/challenges';
 
 interface HomeProps {
   level: number;
@@ -19,13 +20,15 @@ export default function App(props: HomeProps) {
     <NavigationContainer>
       <RegisterProvider>
         <AuthProvider>
-          <CountdownProvider
+          <ChallengeProvider
             level={props.level}
             currentExperience={props.currentExperience}
             challengesCompleted={props.challengesCompleted}
           >
-            <Routes />
-          </CountdownProvider>
+            <CountdownProvider>
+              <Routes />
+            </CountdownProvider>
+          </ChallengeProvider>
         </AuthProvider>
       </RegisterProvider>
     </NavigationContainer>

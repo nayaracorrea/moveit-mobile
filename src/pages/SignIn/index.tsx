@@ -58,13 +58,14 @@ export default function SignIn ({ navigation }) {
                 value={values.password}
                 onBlur={handleBlur('password')}
                 onChangeText={handleChange('password')}
+                password
               />
               <Error>{touched.password && errors.password}</Error>
               <Button onPress={() => {handleSubmit()}}>
                 <Login>Login</Login>
               </Button>
-              <OptionText>Ou</OptionText>
-              <GithubButton click={() => console.log('Github')} icon='github' color='#000' sizeIcon={35} />
+              {/* <OptionText>Ou</OptionText>
+              <GithubButton click={() => console.log('Github')} icon='github' color='#000' sizeIcon={35} /> */}
             </>
           )}
         </Formik>

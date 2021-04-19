@@ -33,6 +33,8 @@ export const NameContainer = styled.View`
 export const Name = styled.Text`
   font-size: 18px;
   font-weight: bold;
+
+  color: ${({ color }) => color};
 `
 
 export const LevelContainer = styled.View`
@@ -44,4 +46,6 @@ export const Level = styled.Text`
   font-size: 14px; 
   margin-left: 2%;
   top: -1px;
+
+  color: ${({ color }) => color};
 `

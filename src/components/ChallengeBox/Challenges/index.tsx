@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 
 import Eye from '../../../../assets/svg/eye'
 import BodyImage from '../../../../assets/svg/body'
+import LevelUpModal from '../../LevelUpModal'
 import { CountdownContext } from '../../../contexts/countdown'
 
 import {
@@ -18,13 +19,27 @@ import {
   Button,
   TitleButton
 } from './styles'
+import { ChallengeContext } from '../../../contexts/challenges'
 
 interface CountdownProps {
   click(): void;
 }
 
 export default function Challenges() {
-  const { completeChallenge, activeChallenge } = useContext(CountdownContext)
+  const { activeChallenge, isLevelUpModalOpen, level, saveLevel, resetChallenge, completeChallenge } = useContext(ChallengeContext)
+  const { resetCountdown } = useContext(CountdownContext)
+
+
+  function handleChallengeSucceeded() {
+    completeChallenge()
+    // saveLevel(level)
+    resetCountdown()
+  }
+
+  function handleChallengeFailed() {
+    resetChallenge()
+    resetCountdown()
+  }
 
   return (
     <>
@@ -46,16 +61,18 @@ export default function Challenges() {
       </Body>
       <Footer>
         <ContainerButtonLeft>
-          <Button color='#E83F5B'>
+          <Button color='#E83F5B' onPress={handleChallengeFailed}>
             <TitleButton>Falhei</TitleButton>
           </Button>
         </ContainerButtonLeft>
         <ContainerButtonRight>
-          <Button color='#4CD62B' onPress={completeChallenge}>
+          <Button color='#4CD62B' onPress={handleChallengeSucceeded}>
             <TitleButton>Completei</TitleButton>
           </Button>
         </ContainerButtonRight>
       </Footer>
+
+      {/* <LevelUpModal /> */}
     </>
   )
 }
