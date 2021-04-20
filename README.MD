@@ -116,7 +116,7 @@ $ expo start --android ou expo start --ios
 
 As seguintes ferramentes foram usadas na construção do projeto:
 
-### **Aplicativo** ([TypeScript](https://www.typescriptlang.org/) + [JavaScript(https://www.javascript.com/)])
+### **Aplicativo** ([TypeScript](https://www.typescriptlang.org/) + [JavaScript](https://www.javascript.com/))
 
 - **[React Native](https://reactnative.dev/)**
 - **[Expo](https://docs.expo.io/)**
