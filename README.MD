@@ -58,11 +58,18 @@ Layout NLW#4:
   <img alt="Made by Tiago Luchtenberg" src="https://img.shields.io/badge/Made%20by%20Tiago%20Luchtenberg%20-Figma-%2304D361">
 </a>
 
-### Web
+### Aplicativo
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
   <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/png/MoveIt-Mobile/Login.png" height="400">
+  <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/png/MoveIt-Mobile/Início_1.png" height="400">
+  <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/png/MoveIt-Mobile/Início_2.png" height="400">
+  <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/png/MoveIt-Mobile/Início_3.png" height="400">
 
+</p>
+
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+  <img alt="NextLevelWeek" title="#MoveIt-Profile" src="./assets/png/MoveIt-Mobile/LevelUp.png" height="400">
   <img alt="NextLevelWeek" title="#MoveIt-Profile" src="./assets/png/MoveIt-Mobile/Perfil.png" height="400">
 
 </p>
@@ -75,7 +82,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-#### 🧭 Rodando a aplicação web (Frontend)
+#### 🧭 Rodando a aplicação mobile
 
 ```bash
 
@@ -109,7 +116,7 @@ $ expo start --android ou expo start --ios
 
 As seguintes ferramentes foram usadas na construção do projeto:
 
-### **Aplicativo** ([TypeScript](https://www.typescriptlang.org/))
+### **Aplicativo** ([TypeScript](https://www.typescriptlang.org/) + [JavaScript(https://www.javascript.com/)])
 
 - **[React Native](https://reactnative.dev/)**
 - **[Expo](https://docs.expo.io/)**
