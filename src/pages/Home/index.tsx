@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect } from 'react'
+import React, { useContext, useEffect, useLayoutEffect } from 'react'
 import { View, Text, Button, TouchableOpacity, Image, StatusBar } from 'react-native'
 import { AuthContext } from '../../contexts/auth'
 import { MaterialIcons as Icon } from '@expo/vector-icons'
@@ -45,9 +45,7 @@ export default function Home ({ navigation }) {
     <InfoUserContainer>
       <InfoUserHome color='#000' />
     </InfoUserContainer>
-    
-    
-    <ChallengeBoxContainer>
+      <ChallengeBoxContainer>
       <ChallengeBox />
     </ChallengeBoxContainer>
   </Container>
