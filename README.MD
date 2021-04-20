@@ -48,6 +48,12 @@ O projeto inicial foi inteiramente voltado para web, porém afim de aprofundar a
 
 O layout da aplicação está disponível no Figma e foi feito por Nayara Corrêa baseado no layout feito pelo Tiago Luchtenberg para a NLW#4:
 
+<a href="https://www.figma.com/file/G2xbaHFo1a5CUMXAdCNM72/MoveIt-Mobile?node-id=0%3A1">
+  <img alt="Made by Tiago Luchtenberg" src="https://img.shields.io/badge/Made%20by%20Nayara%20Corrêa%20-Figma-%2304D361">
+</a>
+
+Layout NLW#4:
+
 <a href="https://www.figma.com/file/ge20pu3ofMOKoliUyKx1Nl/?viewer=1&node-id=160:2761">
   <img alt="Made by Tiago Luchtenberg" src="https://img.shields.io/badge/Made%20by%20Tiago%20Luchtenberg%20-Figma-%2304D361">
 </a>
@@ -55,9 +61,9 @@ O layout da aplicação está disponível no Figma e foi feito por Nayara Corrê
 ### Web
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/Home.png" width="400px">
+  <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/Moveit-Mobile/Login.png" width="400px">
 
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./assets/ciclo-encerrado.png" width="400px">
+  <img alt="NextLevelWeek" title="#MoveIt-Profile" src="./assets/Moveit-Mobile/Perfil.png" width="400px">
 </p>
 
 ## 🚀 Como executar o projeto
@@ -73,21 +79,28 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ```bash
 
 # Clone este repositório
-$ git clone git@github.com:nayaracorrea/moveit-next.git
+$ git clone git@github.com:nayaracorrea/moveit-mobile.git
+
+# No seu terminal/cmd instale o Expo CLI
+$ npm install --global expo-cli
 
 # Acesse a pasta do projeto no seu terminal/cmd
-$ cd moveit-next
+$ cd moveit-mobile
 
-# Vá para a pasta da aplicação Front End
-$ cd moveit-next
+# Vá para a pasta da aplicação
+$ cd moveit-mobile
 
 # Instale as dependências
 $ npm install ou yarn install
 
-# Execute a aplicação em modo de desenvolvimento
-$ npm run dev ou yarn dev
+# Inicie o Expo
+$ expo start --android ou expo start --ios
 
-# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
+# Obs.: Se for executar a aplicação no Android lembre-se de ter um emulador em execução antes de iniciar o expo
+
+# Obs.2: A aplicação pode ser executada diretamente no seu smartphone.
+# Para isso você precisa ter instalado no seu dispositivo o aplicativo do Expo e scannear o QR Code que aparece no canto inferior esquerdo da página que irá abrir após rodar o comando expo start.
+
 
 ```
 
@@ -95,12 +108,16 @@ $ npm run dev ou yarn dev
 
 As seguintes ferramentes foram usadas na construção do projeto:
 
-### **Website** ([Next.js](https://nextjs.org/) + [TypeScript](https://www.typescriptlang.org/))
+### **Aplicativo** ([TypeScript](https://www.typescriptlang.org/))
 
-- **[React](https://pt-br.reactjs.org/)**
-- **[Node.js](https://nodejs.org/en/)**
+- **[React Native](https://reactnative.dev/)**
+- **[Expo](https://docs.expo.io/)**
+- **[Async Storage](https://reactnative.dev/docs/asyncstorage)**
+- **[Formik](https://formik.org/)**
+- **[Yup](https://github.com/jquense/yup)**
+- **[Styled-Component](https://styled-components.com/)**
 
-> Veja o arquivo [package.json](https://github.com/nayaracorrea/moveit-next/blob/main/package.json)
+> Veja o arquivo [package.json](https://github.com/nayaracorrea/moveit-mobile/blob/master/package.json)
 
 ## 💪 Como contribuir para o projeto
 
@@ -119,5 +136,5 @@ As seguintes ferramentes foram usadas na construção do projeto:
 
 Feito por Nayara Corrêa 👋🏽 Entre em contato!
 
-[![Linkedin Badge](https://img.shields.io/badge/-Nayara-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/nayara-corr%C3%AAa-03bb91149/)](https://www.linkedin.com/in/nayara-corr%C3%AAa-03bb91149/)
+[![Linkedin Badge](https://img.shields.io/badge/-Nayara-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/nayaracorreaflorentino/)](https://www.linkedin.com/in/nayaracorreaflorentino/)
 [![Gmail Badge](https://img.shields.io/badge/-nayara.florentino@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:nayara.florentino@gmail.com)](mailto:nayara.florentino@gmail.com)
