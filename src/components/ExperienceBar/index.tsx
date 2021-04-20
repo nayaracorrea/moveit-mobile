@@ -24,7 +24,7 @@ const ExperienceBar = () => {
   <Container>
     <View style={{ width: '60%', height: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#5965E0' }}>XP: {currentExperience}</Text>
-      <Text style={{ fontSize: 15, color: '#5965E0' }}>XP Próximo Level: {experienceToNextLevel}</Text>
+      <Text style={{ fontSize: 13, color: '#5965E0' }}>XP Próximo Level: {experienceToNextLevel}</Text>
 
     </View>
     <View style={{  width: '40%', height: '100%', alignItems: 'center', justifyContent: 'center' }}>
