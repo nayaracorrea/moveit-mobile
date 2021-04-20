@@ -97,7 +97,7 @@ export default function SignIn ({ navigation }) {
       </Body> 
       <Footer>
         <SignOut>
-          <SignOutText onPress={() => navigation.navigate('Register')}>Não tem uma conta? Registre-se!</SignOutText>
+          <SignOutText onPress={() => navigation.navigate('Register')}>Não tem uma conta? <SignOutText style={{ fontWeight: 'bold' }}>Registre-se!</SignOutText> </SignOutText>
         </SignOut>
       </Footer> 
 
