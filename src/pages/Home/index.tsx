@@ -1,5 +1,5 @@
 import React, { useContext, useLayoutEffect } from 'react'
-import { View, Text, Button, TouchableOpacity } from 'react-native'
+import { View, Text, Button, TouchableOpacity, Image } from 'react-native'
 import { AuthContext } from '../../contexts/auth'
 import { MaterialIcons as Icon } from '@expo/vector-icons'
 
@@ -13,6 +13,18 @@ import {
 } from './styles'
 
 export default function Home ({ navigation }) {
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <View
+        style={{ alignItems: 'center', justifyContent: 'center', height: '100%', width: 50 }}
+      >
+        <Image source={require('../../../assets/png/adaptive-icon.png')} style={{ height: 120, width: 120 }}/>
+      </View>
+      )
+    })
+  })
 
   useLayoutEffect(() => {
     navigation.setOptions({

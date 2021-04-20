@@ -15,7 +15,7 @@ const AppRoutes: React.FC = () => (
       component={Home} 
       options={{
         headerTransparent: false,
-        headerTitle: 'Home',
+        headerTitle: 'Início',
         headerTitleStyle: {
           color: '#fff',
         },

@@ -3,6 +3,7 @@ import { Text, View } from 'react-native'
 
 import LevelIcon from '../../../assets/svg/level'
 import { ChallengeContext } from '../../contexts/challenges'
+import { RegisterContext } from '../../contexts/register'
 
 import {
   Container,
@@ -17,13 +18,18 @@ import {
 
 export default function InfoUserHome ({ color }) {
   const { level } = useContext(ChallengeContext)
+  const { avatar } = useContext(RegisterContext)
 
   return (
     <>
       <Container>
         <SubContainer>
           <AvatarContainer>
-            <Avatar source={require('../../../assets/jpg/woman.jpg')} />
+          {avatar === '' ? (
+            <Avatar source={require('../../../assets/png/not-found.png')} />
+          ): (
+            <Avatar source={{ uri: avatar }}  />
+          )}
           </AvatarContainer>
           <NameContainer>
             <Name color={color}>Nayara Corrêa</Name>

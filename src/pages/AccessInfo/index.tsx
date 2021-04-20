@@ -25,6 +25,7 @@ export default function AccessInfo () {
 
   const [spinner, setSpinner] = useState(false)
   const [alert, setAlert] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
   const Alerts = () => {
     setSpinner(true)
@@ -45,8 +46,10 @@ export default function AccessInfo () {
   function EditablePassword(){
     if (editablePassword === false) {
       setEditablePassword(true)
+      setShowPassword(true)
     } else {
       setEditablePassword(false)
+      setShowPassword(false)
     }
   }
 
@@ -87,7 +90,7 @@ export default function AccessInfo () {
               onBlur={handleBlur('password')}
               onChangeText={handleChange('password')}
               value={values.password}
-              password
+              password={showPassword ? false : true}
             />
             <Button onPress={() => {handleSubmit(), Alerts()}}>
               <UpdateText>Atualizar</UpdateText>

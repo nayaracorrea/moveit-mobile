@@ -17,6 +17,7 @@ export default ({
       <InputArea>
         <Input 
           placeholder={placeholder}
+          secureTextEntry={password}
           {...rest}
         />
       </InputArea>

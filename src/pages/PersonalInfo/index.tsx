@@ -94,7 +94,7 @@ export default function PersonalInfo () {
     <Container>
       <Header>
         <AvatarContainer style={styles.shadow}>
-          {image === null ? (
+          {avatar === '' ? (
             <Avatar source={require('../../../assets/png/not-found.png')} />
           ): (
             <Avatar source={{ uri: avatar }}  />

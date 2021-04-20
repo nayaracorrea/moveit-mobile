@@ -11,12 +11,13 @@ import {
 
 
 export default ({
-  icon, placeholder, color, click, colorIconArea, ...rest
+  icon, placeholder, color, click, colorIconArea, password = false, ...rest
 }) => (
   <Form>
       <InputArea>
         <Input 
           placeholder={placeholder}
+          secureTextEntry={password}
           {...rest}
         />
       </InputArea>
