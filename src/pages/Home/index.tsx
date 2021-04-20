@@ -1,5 +1,5 @@
 import React, { useContext, useLayoutEffect } from 'react'
-import { View, Text, Button, TouchableOpacity, Image } from 'react-native'
+import { View, Text, Button, TouchableOpacity, Image, StatusBar } from 'react-native'
 import { AuthContext } from '../../contexts/auth'
 import { MaterialIcons as Icon } from '@expo/vector-icons'
 
@@ -41,6 +41,7 @@ export default function Home ({ navigation }) {
 
   return (
     <Container>
+      <StatusBar barStyle='light-content' backgroundColor='#5965E0' />
     <InfoUserContainer>
       <InfoUserHome color='#000' />
     </InfoUserContainer>

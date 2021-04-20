@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react'
-import { View, Text,  } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity  } from 'react-native'
 import { AuthContext } from '../../contexts/auth'
 import ExperienceBar from '../../components/ExperienceBar'
 // import {ChallengesCompleted} from '../../components/ChallengesCompleted'
 import { FontAwesome as Icon } from '@expo/vector-icons'
 import Spinner from 'react-native-loading-spinner-overlay'
+import { FancyAlert } from 'react-native-expo-fancy-alerts'
 
 import InfoUser from '../../components/InfoUserHome/index'
 import Experience from '../../components/ExperienceBar/index'
@@ -32,13 +33,17 @@ import { ChallengeContext } from '../../contexts/challenges'
 export default function Profile ({ navigation }) {
   const { signOut } = useContext(AuthContext)
   const { challengesCompleted, resetInfoChallenges, deleteData } = useContext(ChallengeContext)
+  
   const [spinner, setSpinner] = useState(false)
+  const [alertReset, setAlertReset] = useState(false)
+  const [alertDelete, setAlertDelete] = useState(false)
 
   const ResetInfo = () => {
     setSpinner(true)
     setTimeout(() => {
       setSpinner(false)
       resetInfoChallenges()
+      setAlertReset(true)
     }, 3000)
   }
 
@@ -51,7 +56,17 @@ export default function Profile ({ navigation }) {
     setTimeout(() => {
       setSpinner(false)
       deleteAllData()
+      setAlertDelete(true)
     }, 3000)
+  }
+
+  const ResetProcessFinished = () => {
+    setAlertReset(false)
+  }
+
+  const DeleteProcessFinished = () => {
+    setAlertDelete(false)
+    signOut()
   }
 
   return (
@@ -118,7 +133,93 @@ export default function Profile ({ navigation }) {
       </Body>
 
       <Spinner visible={spinner} />
+
+      <FancyAlert
+          visible={alertReset}
+          onRequestClose={() => console.log('Teste')}
+          icon={<View style={{
+            flex: 1,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#4CD62B',
+            borderRadius: 50,
+            width: '100%',
+          }}><Icon name='check' size={25} color='#fff' /></View>}
+          style={{ backgroundColor: '#fff' }}
+        >
+          <View style={styles.content}>
+            <Text style={styles.contentText}>Dados restaurados com sucesso!</Text>
+            <TouchableOpacity style={styles.btn} onPress={ResetProcessFinished}>
+              <Text style={styles.btnText}>OK</Text>
+            </TouchableOpacity>
+          </View>
+        </FancyAlert>
+
+        <FancyAlert
+          visible={alertDelete}
+          onRequestClose={() => console.log('Teste')}
+          icon={<View style={{
+            flex: 1,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#4CD62B',
+            borderRadius: 50,
+            width: '100%',
+          }}><Icon name='check' size={25} color='#fff' /></View>}
+          style={{ backgroundColor: '#fff' }}
+        >
+          <View style={styles.content}>
+            <Text style={styles.contentText}>Dados deletados com sucesso!</Text>
+            <TouchableOpacity style={styles.btn} onPress={DeleteProcessFinished}>
+              <Text style={styles.btnText}>OK</Text>
+            </TouchableOpacity>
+          </View>
+        </FancyAlert>
     </Container>
 
   )
 }
+
+
+const styles = StyleSheet.create({
+  shadow: {
+    shadowColor: "#000",
+    shadowOffset: {
+    	width: 0,
+    	height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
+  },
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: -16,
+    marginBottom: 16,
+  },
+  contentText: {
+    textAlign: 'center',
+  },
+  btn: {
+    borderRadius: 32,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 8,
+    paddingVertical: 8,
+    alignSelf: 'stretch',
+    backgroundColor: '#4CD62B',
+    marginTop: 16,
+    minWidth: '50%'
+  },
+  btnText: {
+    color: '#fff'
+  }
+})

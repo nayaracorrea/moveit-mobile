@@ -236,16 +236,17 @@ const ChallengeProvider = ({ children, ...rest }: ChallengeProviderProps) => {
     resetLevel()
     resetCurrentExperience()
     resetChallengesCompleted()
-    alert('Dados restaurados com sucesso')
+    // alert('Dados restaurados com sucesso')
   }
 
   const deleteData = async () => {
     try {
       await AsyncStorage.clear()
-      signOut()
-      alert('Dados deletados com sucesso!')
+      // signOut()
+      // alert('Dados deletados com sucesso!')
     } catch (e) {
-      alert('Não foi possível deletar os seus dados.')
+      // alert('Não foi possível deletar os seus dados.')
+      console.log(e.message)
     }
   }
 
