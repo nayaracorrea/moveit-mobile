@@ -44,7 +44,7 @@ export default function SignIn ({ navigation }) {
               <Title>Login</Title>
               <Input 
                 placeholder='E-mail'
-                icon='person'
+                icon='email'
                 color='#5965E0'
                 value={values.email}
                 onBlur={handleBlur('email')}
