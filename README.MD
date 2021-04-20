@@ -61,9 +61,10 @@ Layout NLW#4:
 ### Web
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/png/MoveIt-Mobile/Perfil.png">
+  <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/png/MoveIt-Mobile/Login.png" height="50%">
 
-  <!-- <img alt="NextLevelWeek" title="#MoveIt-Profile" src="./assets/png/Moveit-Mobile/Perfil.png"> -->
+  <img alt="NextLevelWeek" title="#MoveIt-Profile" src="./assets/png/MoveIt-Mobile/Perfil.png" height="50%">
+
 </p>
 
 ## 🚀 Como executar o projeto
