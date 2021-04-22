@@ -18,7 +18,7 @@ import {
 
 export default function InfoUserHome ({ color }) {
   const { level } = useContext(ChallengeContext)
-  const { avatar } = useContext(RegisterContext)
+  const { avatar, name, lastName } = useContext(RegisterContext)
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function InfoUserHome ({ color }) {
           )}
           </AvatarContainer>
           <NameContainer>
-            <Name color={color}>Nayara Corrêa</Name>
+            <Name color={color}>{name + ' ' + lastName}</Name>
             <LevelContainer>
               <LevelIcon width={15} height={15} />
               <Level color={color}>Level {level}</Level>

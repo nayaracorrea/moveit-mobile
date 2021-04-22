@@ -61,10 +61,10 @@ Layout NLW#4:
 ### Aplicativo
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/png/MoveIt-Mobile/Login.png" height="400">
-  <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/png/MoveIt-Mobile/Início_1.png" height="400">
-  <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/png/MoveIt-Mobile/Início_2.png" height="400">
-  <img alt="NextLevelWeek" title="#MoveIt-Login" src="./assets/png/MoveIt-Mobile/Início_3.png" height="400">
+  <img alt="NextLevelWeek" title="#MoveIt" src="./assets/png/MoveIt-Mobile/Login.png" height="400">
+  <img alt="NextLevelWeek" title="#MoveIt" src="./assets/png/MoveIt-Mobile/Início_1.png" height="400">
+  <img alt="NextLevelWeek" title="#MoveIt" src="./assets/png/MoveIt-Mobile/Início_2.png" height="400">
+  <img alt="NextLevelWeek" title="#MoveIt" src="./assets/png/MoveIt-Mobile/Início_3.png" height="400">
 
 </p>
 
@@ -104,10 +104,13 @@ $ npm install ou yarn install
 # Inicie o Expo
 $ expo start --android ou expo start --ios
 
-# Obs.: Se for executar a aplicação no Android lembre-se de ter um emulador em execução antes de iniciar o expo
+# Obs.: Se for executar a aplicação no Android lembre-se de ter um emulador em execução antes de
+# iniciar o expo
 
 # Obs.2: A aplicação pode ser executada diretamente no seu smartphone.
-# Para isso você precisa ter instalado no seu dispositivo o aplicativo do Expo e scannear o QR Code que aparece no canto inferior esquerdo da página que irá abrir após rodar o comando expo start.
+
+# Para isso você precisa ter instalado no seu dispositivo o aplicativo do Expo e scannear o QR Code
+# que aparece no canto inferior esquerdo da página que irá abrir após rodar o comando expo start.
 
 
 ```
